@@ -1,0 +1,96 @@
+@font-face {
+    font-family: consolas;
+    src: url(/assets/Consolas.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: consolas;
+    font-size: 16px;
+    color: #f8f4f1;
+    /* outline: 1px solid salmon; */
+}
+
+body {
+    background-color: #262525;
+    display: flex;
+}
+
+nav {
+    background-color: #010101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 4rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 5rem 5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+/*=========================================/=========================================*/
+/* Home Button */
+#homeButton {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: auto;
+}
+
+#homeButton > span {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#homeImage {
+    height: 32px;
+}
+
+#homeImage > img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/*=========================================/=========================================*/
+/* Media */
+#media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-right: 2rem;
+}
+
+#media > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 200ms;
+}
+
+#media > a:hover {
+    transform: scale(1.1);
+    background-color: #2e2e2e;
+}
+
+#media > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*=========================================/=========================================*/
+/* PLACEHOLDER */

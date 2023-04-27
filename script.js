@@ -13,12 +13,13 @@ const getAge = (dateString) => {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const consoleDir = document.getElementById('consoleDir')
-    const consoleInput = document.getElementById('consoleInput')
+    const consoleInput = document.getElementById('consoleText')
     const consoleText = [
         {
             dir: '~$',
             command: `cd ~/dev/porfolio`,
             output: '',
+            timeout: 0
         },
         {
             dir: '~/dev/portfolio$',
@@ -26,11 +27,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 dateBirth
             )} años"}'`,
             output: 'building website...',
+            timeout: 1000
         },
         {
-            dir: '~/$',
-            command: `cd ~/dev/porfolio`,
-            output: '',
+            dir: '~/dev/portfolio$',
+            command: `./build '{"name": "Gustavo Salcedo", "role": "Desarrollador de Software"}, "Edad": "${getAge(
+                dateBirth
+            )} años"}'`,
+            output: 'building website...',
+            timeout: 1000
         },
     ]
 
@@ -46,13 +51,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         for (let character in text.command) {
             consoleInput.innerHTML =
-                text.command.substring(0, parseInt(character) + 1) + '<span aria-hidden="true">▮</span>'
-            await sleep(20)
+                text.command.substring(0, parseInt(character) + 1)
+            await sleep(30)
         }
         console.log('text.command.output: ', text.output)
         if (text.output) {
+            consoleDir.innerHTML = ``
             consoleInput.innerHTML = `<span aria-hidden="true">${text.output}</span>`
-            await sleep(20)
+            await sleep(text.timeout)
         }
     }
 })

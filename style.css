@@ -49,7 +49,7 @@ nav {
     padding: 1rem 2rem;
     margin-bottom: 2rem;
     border-radius: 0 0 1rem 1rem;
-    box-shadow: 0 5rem 5rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 5rem 0 rgb(0, 0, 0);
     gap: 1rem;
 }
 
@@ -161,30 +161,42 @@ footer {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 3rem;
-    width: 100vw;
+    gap: 1rem;
+    width: 100%;
 }
 
 .presentation {
+    width: 40%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 1rem;
-    margin: 3rem;
+    margin: 1rem;
 }
+
 .information {
-    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-finish) 50%);
+    box-shadow: 0.5rem 0.5rem 2rem 0 rgb(0, 0, 0);
 }
 
 .information > h1 {
+    width: 100%;
     font-size: 2rem;
     text-align: center;
 }
 
 .information > h4 {
-    font-size: 1.1rem;
+    width: 100%;
+    font-size: 1rem;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -205,6 +217,7 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 2rem 0 rgb(0, 0, 0);
 }
 
 .work {
@@ -225,8 +238,8 @@ footer {
     gap: 1.5rem;
     padding: 1rem;
     border-radius: 1rem;
-    background: rgb(52, 51, 63);
     background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-finish) 50%);
+    box-shadow: 0.5rem 0.5rem 2rem 0 rgb(0, 0, 0);
 }
 
 .work > div > h2 {

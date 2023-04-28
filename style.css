@@ -1,68 +1,122 @@
 @font-face {
-    font-family: consolas;
-    src: url(/assets/Consolas.ttf);
+    font-family: Fira Code;
+    src: url(assets/Fira\ Code\ Retina\ Nerd\ Font\ Complete.ttf);
+}
+
+:root {
+    --main: #3b58be;
+    --main-hover: #384c94;
+    --secondary: #a81439;
+    --console-dir: #367bf0;
+    --light: #f8f4f1;
+    --dark: #262525;
+    --dark-hover: #2e2e2e;
+    --black: #010101;
+    --gradient-start: #34333f;
+    --gradient-finish: #3f3b3b;
 }
 
 * {
     padding: 0;
     margin: 0;
-    font-family: consolas;
+    font-family: Fira Code;
     font-size: 16px;
-    color: #f8f4f1;
+    color: var(--light);
+    list-style-type: none;
+    transition: 200ms;
     /* outline: 1px solid salmon; */
 }
 
 body {
-    background-color: #262525;
+    background-color: var(--dark);
     display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    height: 100vh;
 }
 
 nav {
-    background-color: #010101;
+    box-sizing: border-box;
+    background-color: var(--black);
+    font-size: 1rem;
+    font-weight: 700;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     position: sticky;
     top: 0;
     width: 100vw;
-    height: 4rem;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 5rem 5rem 0 rgba(0, 0, 0, 0.2);
+    gap: 1rem;
 }
 
 a {
     text-decoration: none;
-    padding: 0.5rem;
 }
 
+footer { 
+    display: flex;
+    background-color: var(--black);
+    min-height: 200px;
+    height: 25vh;
+    width: 100%; 
+    margin-top: 2rem;
+    border-radius: 1rem 1rem 0 0 ;
+}
 /*=========================================/=========================================*/
 /* Home Button */
 #homeButton {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    margin-left: 2rem;
     margin-right: auto;
+    padding: 0.5rem;
 }
 
-#homeButton * {
-    font-size: 1rem;
-    font-weight: 700;
+#console {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+#console span {
+    display: flex;
+    font-family: Fira Code;
+}
+
+#consolePath {
+    display: flex;
+}
+
+#consoleDir {
+    background-color: var(--console-dir);
+    padding: 0 0rem 0 0.5rem;
+}
+
+#dirArrow {
+    color: var(--console-dir);
 }
 
 #consoleInput {
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+#inputText:after {
+    content: '▮';
+    animation: blink 1s infinite;
 }
 
-#consoleCursor {
-    animation: cursor-blink 1s steps(2) infinite;
+#outputText {
+    display: flex;
+    flex-direction: column;
+    
 }
 
 #homeImage {
     height: 32px;
+    min-width: 36px;
+    align-self: center;
 }
 
 #homeImage > img {
@@ -78,7 +132,6 @@ a {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    margin-right: 2rem;
 }
 
 #media > a {
@@ -93,7 +146,7 @@ a {
 
 #media > a:hover {
     transform: scale(1.1);
-    background-color: #2e2e2e;
+    background-color: var(--dark-hover);
 }
 
 #media > a > img {
@@ -103,9 +156,131 @@ a {
 }
 
 /*=========================================/=========================================*/
+/* content */
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    width: 100vw;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem;
+}
+.information {
+    max-width: 450px;
+}
+
+.information > h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.information > h4 {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.information > p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#photo_container {
+
+    width: 300px;
+    height: 300px;
+}
+
+#photo_container > img {
+    object-fit: cover;
+    object-position: 0 -20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 750px;
+}
+
+.work > div {
+    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgb(52, 51, 63);
+    background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-finish) 50%);
+}
+
+.work > div > h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.work ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    width: 100%;
+}
+
+.work li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.work li span, .work li a{
+    display: flex;
+    align-items: center;
+    background-color: var(--main);
+    font-weight: 700;
+    width: 100%;
+    height: 1.5rem;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    transition: 100ms;
+}
+
+.work > div a:hover {
+    background-color: var(--main-hover);
+    transform: scale(1.05);
+}
+
+/*=========================================/=========================================*/
 /* animations */
-@keyframes cursor-blink {
+@keyframes blink {
     0% {
+        opacity: 1;
+    }
+    1% {
         opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    51% {
+        opacity: 1;
     }
 }

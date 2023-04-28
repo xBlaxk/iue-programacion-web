@@ -139,7 +139,7 @@ footer {
     height: 1.25rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    transition: 200ms;
+    transition: 150ms;
 }
 
 #media > a:hover {
@@ -265,7 +265,7 @@ footer {
 
 .work li a {
     background-color: var(--main);
-    transition: 100ms;
+    transition: 150ms;
 }
 
 .work > div a:hover {

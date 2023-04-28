@@ -44,8 +44,8 @@ nav {
     align-items: center;
     justify-content: center;
     position: sticky;
-    top: 0;
-    width: 100vw;
+    top: 0px;
+    width: 100%;
     padding: 1rem 2rem;
     margin-bottom: 2rem;
     border-radius: 0 0 1rem 1rem;
@@ -101,8 +101,9 @@ footer {
 #consoleInput {
     display: flex;
 }
+
 #inputText:after {
-    content: '▮';
+    content: '|';
     animation: blink 1s infinite;
 }
 
